@@ -26,7 +26,7 @@ app.post('/generate', (req, res) => {
         },
         json: {
             messages: [
-              {"role": "system", "content": "Dans une note de service, il n'y a pas d'objet mais un titre Note de Service n°x, on ne dois pas utiliser nous ou je et il ne faut pas signer la note. Le ton doit etre direct et à la voix passive. Utilise ces informations pour en rédiger une à l'aide de ce résumé :"},
+              {"role": "system", "content": "Dans une note de service, il n'y a pas d'objet mais un titre Note de Service n°x, on ne dois pas utiliser nous ou je et il ne faut pas signer la note. Le ton doit etre direct et à la voix passive. N'oublie pas de passer des lignes et de faire une mise en forme correct. Utilise ces informations pour en rédiger une à l'aide de ce résumé :"},
               {"role": "user", "content": article_text} ,
           ],
             model : "gpt-3.5-turbo",
