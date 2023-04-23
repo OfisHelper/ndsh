@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,23 +8,24 @@
   </head>
   <body>
     <center>
-    <h2>Rédacteur de Note de service</h2>
+    <h2>Rédacteur de Note de Service</h2>
     <form action="/generate" method="post">
       <h3 for="article_text"></h3>
       <textarea style="resize: none;" required="required" placeholder="Faites un résumé de la note de service, nous l'approfondirons et la rédigeront avec soin :" rows="30" name="article_text" id="article_text" cols="60" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
       <br><br><br>
-      <button type="submit">Générer la note</button>
-      <script>let btn = document.querySelector("button");
-
-        btn.addEventListener("click", active);
-
-        function active() {
-          btn.classList.toggle("is_active");
-        }</script>
-      <button type="submit">Générer la note</button>
-    </form>
-    <div id="result"></div>
-    <script src="script.js"></script>
-  </center>
+      <button id="generate-button" type="submit">Générer la note</button>
+      <div id="loader"></div>
+      <script>
+        const generateButton = document.querySelector("#generate-button");
+        const loader = document.querySelector("#loader");
+        generateButton.addEventListener("click", () => {
+      generateButton.style.display = "none";
+      loader.style.display = "inline-block";
+    });
+  </script>
+</form>
+<div id="result"></div>
+<script src="script.js"></script>
+       </center>
   </body>
 </html>
